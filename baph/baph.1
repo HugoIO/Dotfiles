@@ -1,0 +1,68 @@
+.TH BAPH 1 baph\-VERSION
+.SH NAME
+baph \- basic aur package helper
+.SH SYNOPSIS
+.B baph
+.RB < operation >
+.RB [ options ]
+.RB [ targets ]
+.SH DESCRIPTION
+Baph is a small bash script that aids with installing and updating packages from the AUR.
+It is not a package manager, other than installing and updating you will still require pacman.
+.P
+AUR packages are user produced content, use the provided files at your own risk.
+baph does not allow running as root and follows the build process outlined here:
+
+\fIhttps://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages\fR
+.SH OPERATIONS
+.TP
+.B \-i
+install packages.
+.TP
+.B \-u
+update packages.
+.TP
+.B \-s
+search for packages.
+.TP
+.B \-c
+output count of package updates.
+.TP
+.B \-h
+opens this man page.
+.TP
+.B \-v
+print current version.
+.SH OPTIONS
+.TP
+.B \-a
+only perform operation on AUR packages.
+.TP
+.B \-n
+skip viewing PKGBUILD files when installing from the AUR.
+.TP
+.B \-N
+skip confirmation prompts, also passed to pacman and makepkg.
+.SH EXAMPLES
+.TP
+install packages from the AUR and official repos in one command.
+.B baph \-i aurvote git
+.TP
+get an update count for both AUR and pacman packages.
+.B baph \-c
+.TP
+search the AUR for terms and view the results in \fBless\fR(1)
+.B baph \-s 'text editor' | less -R
+.TP
+update only the AUR packages and skip confirm dialogs
+.B baph \-uaN
+.TP
+install using a specific build location
+.B BAPH_BUILDDIR='/tmp/baph' baph \-i aurvote
+.SH SEE ALSO
+.BR pkgbuild (1),
+.BR makepkg (1),
+.BR pacman (1),
+.BR less (1)
+.SH Author
+Nathaniel Maia <\fInatemaia10@gmail.com\fR> 2018-2021

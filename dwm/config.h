@@ -31,7 +31,8 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     	NULL,       NULL,       0,            1,           -1 },
-	{ "IceWeasel",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "St",                 NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "firefox",  NULL,       NULL,       1 << 1,         0,           -1 },
 };
 
 /* layout(s) */
@@ -62,7 +63,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont};
 static const char *termcmd[]  = { "st", NULL };
-static const char *browser[] = { "iceweasel", NULL };
+static const char *browser[] = { "firefox", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
