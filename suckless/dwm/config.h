@@ -31,7 +31,7 @@ static const char dmenu_font[]= {
 // #include "themes/serenade.h"
 
 static const char *const autostart[] = {
-    "/home/saikat/.local/src/dwm/autostart.sh",  NULL,
+    "/home/bliss/.local/src/dwm/autostart.sh",  NULL,
     NULL,
 };
 
